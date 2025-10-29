@@ -1,4 +1,6 @@
-# Table of Contents
+# URL Shortener System Design [![System Design](https://img.shields.io/badge/System%20Design-URL%20Shortener-blue)](https://bit.ly)
+
+## 📚 Table of Contents
 
 - [Problem Statement](#problem-statement)
 - [Functional Requirements](#functional-requirements)
@@ -10,7 +12,7 @@
   - [URL Redirecting](#url-redirecting)
   - [Link Analytics](#link-analytics)
 
-# Problem Statement
+## Problem Statement
 
 Design a URL Shortener service like [bit.ly](bit.ly)
 
@@ -18,13 +20,13 @@ A URL Shortener is a service that takes a long URL and generates a shorter, uniq
 
 The system should be able to handle millions of URLs, allowing users to create, store, and retrieve shortened URLs efficiently.
 
-# Functional Requirements
+## Functional Requirements
 
 1. URL Shortening - pass in a long URL and shorten it.
 2. URL Redirection - Accessing the short URL should redirect to the original URL with minimal delay.
 3. Link Analytics - Count the number of times the short URL is accessed.
 
-# Non-Functional Requirements
+## Non-Functional Requirements
 
 1. Minimize redirect latency
 2. Assuming 100M DAU, Read-write ratio = 100:1
@@ -32,7 +34,7 @@ The system should be able to handle millions of URLs, allowing users to create, 
    2. 1M write requests per day.
 3. High availability
 
-# API Endpoints
+## API Endpoints
 
 ### `POST /api/url/shorten`
 
@@ -66,9 +68,9 @@ Redirect to the original long URL using the shortened URL.
 }
 ```
 
-# Database Design
+## Database Design
 
-## SQL vs NoSQL
+### SQL vs NoSQL
 
 - Need to store billions of records.
 - Simple key-value lookups.
@@ -78,7 +80,7 @@ Redirect to the original long URL using the shortened URL.
 
 Keeping these points in mind, we can go for a NoSQL database like **_DynamoDB_**.
 
-## Database Schema
+### Database Schema
 
 **ShortURL**
 
@@ -92,14 +94,14 @@ Keeping these points in mind, we can go for a NoSQL database like **_DynamoDB_**
 
 # High-Level Design
 
-## URL Shortening
+### URL Shortening
 
 - The backend service receives the requests, and it should create a short URL for the given long URL.
 - The mapping of the short URL to the long URL should be stored in a highly available database, such as DynamoDB.
 
 ![URL Shortener service](./assets/url-shortener/url-shortener-1.png)
 
-## URL Redirecting
+### URL Redirecting
 
 - Split into two services - shortening and redirecting.
 - The API Gateway acts as an entry point, routing POST requests to the URL Shortening service and GET requests to the URL Redirecting Service.
@@ -108,7 +110,7 @@ Keeping these points in mind, we can go for a NoSQL database like **_DynamoDB_**
 
 ![URL Redirecting service](./assets/url-shortener/url-shortener-2.png)
 
-## Link Analytics
+### Link Analytics
 
 - When a GET request for the Redirecting service is made, a private GET request to the link analytics service is made by the API Gateway.
 - The link analytics service will keep a visit frequency count of the short URL in the in-memory or Redis.
