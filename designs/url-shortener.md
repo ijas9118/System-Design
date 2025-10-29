@@ -42,7 +42,7 @@ Shorten a given long URL and return the shortened URL.
 
 ```json
 {
-  “longURL”: "http://example.com/random/page?random=true"
+  "longURL": "http://example.com/random/page?random=true"
 }
 ```
 
@@ -50,7 +50,7 @@ Shorten a given long URL and return the shortened URL.
 
 ```json
 {
-  “shortURL”: "http://shorty.ly/abc"
+  "shortURL": "http://shorty.ly/abc"
 }
 ```
 
@@ -62,7 +62,7 @@ Redirect to the original long URL using the shortened URL.
 
 ```json
 {
-  “longURL”: "http://example.com/random/page?random=true"
+  "longURL": "http://example.com/random/page?random=true"
 }
 ```
 
