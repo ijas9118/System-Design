@@ -1,6 +1,9 @@
-# E-Commerce System Design ![System Design](https://img.shields.io/badge/System%20Design-E_Commerce-orange)
+# E-Commerce System Design
 
-## 📚 Table of Contents
+![HLD](https://img.shields.io/badge/Design-HLD-green)
+![System Design](https://img.shields.io/badge/System-E_Commerce-orange)
+
+## Table of Contents
 
 1. [Problem Statement](#problem-statement)
 2. [Functional Requirements](#functional-requirements)
@@ -172,16 +175,16 @@ Lists the user’s orders.
 
 ### Product Browsing Flow
 
-![Product Browsing Flow](./assets/e-commerce/product-browsing-flow.png)
+![Product Browsing Flow](./assets/product-browsing-flow.png)
 
 ### Cart Management Flow
 
-![Cart Management Flow](./assets/e-commerce/cart-management-flow.png)
+![Cart Management Flow](./assets/cart-management-flow.png)
 
 ### Checkout & Order Placement Flow
 
-![Checkout & Order Placement Flow](./assets/e-commerce/checkout-and-order-placement-flow.png)
+![Checkout & Order Placement Flow](./assets/checkout-and-order-placement-flow.png)
 
 ### Complete Architecture
 
-![Complete Architecture](./assets/e-commerce/complete-architecture.png)
+![Complete Architecture](./assets/complete-architecture.png)

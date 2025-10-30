@@ -1,6 +1,9 @@
-# URL Shortener System Design [![System Design](https://img.shields.io/badge/System%20Design-URL%20Shortener-blue)](https://bit.ly)
+# URL Shortener System Design
 
-## 📚 Table of Contents
+![HLD](https://img.shields.io/badge/Design-HLD-green)
+![System Design](https://img.shields.io/badge/System-URL%20Shortener-blue)
+
+## Table of Contents
 
 - [Problem Statement](#problem-statement)
 - [Functional Requirements](#functional-requirements)
@@ -99,7 +102,7 @@ Keeping these points in mind, we can go for a NoSQL database like **_DynamoDB_**
 - The backend service receives the requests, and it should create a short URL for the given long URL.
 - The mapping of the short URL to the long URL should be stored in a highly available database, such as DynamoDB.
 
-![URL Shortener service](./assets/url-shortener/url-shortener-1.png)
+![URL Shortener service](./assets/url-shortener-1.png)
 
 ### URL Redirecting
 
@@ -108,7 +111,7 @@ Keeping these points in mind, we can go for a NoSQL database like **_DynamoDB_**
 - The redirection service accepts the short URL, fetches it from the Redis cache, and responds with a 302 Found Status code.
 - If a cache miss, fetch it from the DynamoDB and also save it in the cache.
 
-![URL Redirecting service](./assets/url-shortener/url-shortener-2.png)
+![URL Redirecting service](./assets/url-shortener-2.png)
 
 ### Link Analytics
 
@@ -116,4 +119,4 @@ Keeping these points in mind, we can go for a NoSQL database like **_DynamoDB_**
 - The link analytics service will keep a visit frequency count of the short URL in the in-memory or Redis.
 - After a period of time, say 60 seconds, the visit frequency of every short URL will be flushed and updated in DynamoDB.
 
-![Final Design](./assets/url-shortener/url-shortener-3.png)
+![Final Design](./assets/url-shortener-3.png)
