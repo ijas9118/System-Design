@@ -104,9 +104,8 @@ List products with filters and pagination.
     {
       "id": 123,
       "name": "Samsung Galaxy Fold 7",
-      "price": 89999.00
-    },
-    ...
+      "price": 89999.0
+    }
   ],
   "total": 100
 }
@@ -142,10 +141,9 @@ Lists the user’s orders.
   "orders": [
     {
       "id": 123,
-      "total_amount": 89999.00,
+      "total_amount": 89999.0,
       "status": "shipped"
-    },
-    ...
+    }
   ],
   "total": 100
 }
