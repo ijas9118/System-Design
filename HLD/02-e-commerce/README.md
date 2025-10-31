@@ -71,7 +71,7 @@ Design a scalable E-Commerce application like [Amazon.com](Amazon.com) or [Flipk
 
 ## Data Model
 
-![Data Model](./assets/e-commerce/data-model.png)
+![Data Model](./assets/data-model.png)
 
 ## API Endpoints
 
